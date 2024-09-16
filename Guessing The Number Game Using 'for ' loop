@@ -1,0 +1,33 @@
+/*I have made a program that generates a random number and asks the player to guess
+it. If the player’s guess is higher than the actual number, the program displays “Lower
+number please”. Similarly, if the user’s guess is too low, the program prints “Higher
+number please”.
+When the user guesses the correct number, the program displays the number of
+guesses the player used to arrive at the number. For This Program I have used for loop */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    
+    srand(time(0));
+    int random_number= (rand()%100)+1;
+    int n;
+    printf("Lets Check Your Luck By Playing This Short Game Where You Have To Guess a Number between 1 to 100, if you guess the number in less attempts then you are lucky\n \n");
+    
+    for (int NumberOfGuesses=0; random_number; NumberOfGuesses++) {
+        printf("guess The Number :- \n");
+        scanf("%d", &n);
+        if (random_number>n) {
+            printf("HINT - Guess Higher Number Please\n \n");
+        } else if (random_number<n) {
+            printf("HINT - Guess Lower Number Please\n \n");
+        } else {
+            printf("Congratulations Buddy You Have Guessed The Number\n \n You have Huessed The Number in %d attempts", NumberOfGuesses);
+            break;
+        }
+    } 
+    
+    return 0;
+}
